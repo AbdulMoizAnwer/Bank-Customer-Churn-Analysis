@@ -24,6 +24,8 @@ The objectives of this project are to:
 
 This project uses the **Bank Customer Churn Prediction** dataset containing **10,000 customer records** and **12 variables** describing customer demographics, banking products, account information, and churn status.
 
+**Source:** Kaggle – Bank Customer Churn Prediction Dataset.
+
 ### Variables
 
 * Customer ID
@@ -41,10 +43,38 @@ This project uses the **Bank Customer Churn Prediction** dataset containing **10
 
 ## Technologies Used
 
-* Python
-* Pandas
-* Matplotlib
-* Visual Studio Code
+- Python
+- Pandas
+- Matplotlib
+- Git
+- GitHub
+- Visual Studio Code
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AbdulMoizAnwer/Bank-Customer-Churn-Analysis.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd Bank-Customer-Churn-Analysis
+```
+
+Install the required Python libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the analysis script:
+
+```bash
+python scripts/churn_analysis.py
+```
 
 ## Project Structure
 
@@ -52,18 +82,14 @@ This project uses the **Bank Customer Churn Prediction** dataset containing **10
 Bank-Customer-Churn-Analysis/
 │
 ├── data/
-│
 ├── images/
 │   ├── Univariate Analysis/
 │   └── Bivariate Analysis/
-│
-├── notebooks/
+├── scripts/
 │   └── churn_analysis.py
-│
 ├── README.md
 ├── requirements.txt
-├── .gitignore
-└── LICENSE
+└── .gitignore
 ```
 
 ## Data Cleaning & Data Quality Assessment
@@ -111,6 +137,40 @@ Customer churn was analysed against:
 
 Each analysis includes statistical interpretation, business insights, and practical recommendations.
 
+## Featured Visualizations
+
+The following visualisations highlight some of the most important findings from the exploratory data analysis. Each chart provides insight into the factors associated with customer churn and supports the business recommendations presented in this project.
+
+### Customer Churn by Country
+
+Germany recorded the highest customer churn rate (32.4%), almost double that of France and Spain. This suggests that customer retention challenges are more pronounced in the German market and may require targeted investigation and retention strategies.
+
+![Customer Churn by Country](images/Bivariate%20Analysis/country_vs_churn.png)
+
+### Customer Age vs Customer Churn
+
+The analysis indicates that older customers are more likely to leave the bank than younger customers. This finding suggests that age is an important demographic factor associated with customer churn and should be considered when designing customer retention initiatives.
+
+![Customer Age vs Customer Churn](images/Bivariate%20Analysis/age_vs_churn.png)
+
+### Customer Activity vs Customer Churn
+
+Inactive customers exhibited nearly twice the churn rate of active customers. This highlights customer engagement as one of the strongest behavioural indicators of customer retention and emphasises the importance of encouraging regular account activity.
+
+![Customer Activity vs Customer Churn](images/Bivariate%20Analysis/active_member_vs_churn.png)
+
+### Number of Banking Products vs Customer Churn
+
+Customers holding two banking products demonstrated the highest retention rates, while customers with only one product were considerably more likely to churn. This suggests that strengthening customer relationships through appropriate cross-selling may improve long-term customer loyalty.
+
+![Number of Banking Products vs Customer Churn](images/Bivariate%20Analysis/products_vs_churn.png)
+
+### Correlation Matrix
+
+The correlation analysis confirms that customer age and activity status exhibit the strongest relationships with churn, while variables such as estimated salary, credit card ownership, tenure, and credit score show relatively weak individual associations. These findings support the conclusions obtained from the exploratory data analysis.
+
+![Correlation Matrix](images/Bivariate%20Analysis/correlation_heatmap.png)
+
 ## Key Business Insights
 
 The analysis produced several important business findings:
@@ -133,6 +193,16 @@ Based on the analytical findings, the following recommendations are proposed:
 * Implement proactive monitoring of high-balance customers to minimise the loss of valuable deposits.
 * Focus predictive churn models on behavioural variables such as customer activity, product ownership, age, and account balance rather than relying solely on demographic characteristics.
 
+## Business Value
+
+The findings of this analysis can help financial institutions:
+
+- Identify customers at high risk of churn.
+- Improve customer retention strategies.
+- Support data-driven decision-making.
+- Prioritise high-value customers for proactive engagement.
+- Strengthen predictive analytics initiatives.
+
 ## Future Improvements
 
 Future versions of this project will include:
@@ -148,8 +218,9 @@ Future versions of this project will include:
 
 **Abdul Moiz Anwer**
 
-M.Sc. Economic Behaviour and Governance
+M.Sc. Economic Behaviour and Governance  
+University of Kassel, Germany
 
 📧 Email: [moizx_anwer@hotmail.com](mailto:moizx_anwer@hotmail.com)
 
-🔗 LinkedIn: https://linkedin.com/in/abdulmoizanwer
+🔗 LinkedIn: [Abdul Moiz Anwer](https://www.linkedin.com/in/abdulmoizanwer)
