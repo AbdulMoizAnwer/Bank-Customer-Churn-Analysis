@@ -1,6 +1,6 @@
 # Bank Customer Churn Analysis
 
-A comprehensive data analytics project that explores the factors influencing customer churn in the banking sector using Python. The project follows a complete analytics workflow, including data cleaning, exploratory data analysis (EDA), statistical analysis, data visualization, and business interpretation to transform raw customer data into actionable business insights and recommendations.
+A comprehensive banking analytics project that investigates the key factors influencing customer churn using **PostgreSQL, SQL, and Python**. The project follows an end-to-end analytics workflow, including database design, data quality validation, SQL-based business analysis, exploratory data analysis (EDA), statistical analysis, data visualisation, and business interpretation to transform raw customer data into actionable business insights and recommendations.
 
 ## Business Problem
 
@@ -18,7 +18,7 @@ The objectives of this project are to:
 * Identify the key factors associated with customer retention.
 * Provide business insights supported by statistical analysis and data visualisations.
 * Develop practical business recommendations based on analytical findings.
-* Demonstrate end-to-end data analytics skills using Python.
+* Demonstrate end-to-end banking analytics skills using PostgreSQL, SQL, and Python.
 
 ## Dataset
 
@@ -43,6 +43,9 @@ This project uses the **Bank Customer Churn Prediction** dataset containing **10
 
 ## Technologies Used
 
+- PostgreSQL
+- SQL
+- DBeaver
 - Python
 - Pandas
 - Matplotlib
@@ -64,16 +67,28 @@ Navigate to the project directory:
 cd Bank-Customer-Churn-Analysis
 ```
 
+Before running this project, install:
+
+- PostgreSQL 17 or later
+- DBeaver (or another PostgreSQL client)
+- Python 3.12 or later
+
 Install the required Python libraries:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the analysis script:
+Open the SQL scripts using DBeaver (or any PostgreSQL client) and execute them in the following order:
+
+1. `01_schema.sql`
+2. `02_data_validation.sql`
+3. `03_business_queries.sql`
+
+Run the Python analysis:
 
 ```bash
-python scripts/churn_analysis.py
+python python/churn_analysis.py
 ```
 
 ## Project Structure
@@ -82,14 +97,72 @@ python scripts/churn_analysis.py
 Bank-Customer-Churn-Analysis/
 │
 ├── data/
+│   └── Bank Customer Churn Prediction.csv
+│
 ├── images/
 │   ├── Univariate Analysis/
-│   └── Bivariate Analysis/
-├── scripts/
+│   │   ├── activity_status.png
+│   │   ├── age_distribution.png
+│   │   ├── country_distribution.png
+│   │   └── products_distribution.png
+│   │
+│   ├── Bivariate Analysis/
+│   │   ├── active_member_vs_churn.png
+│   │   ├── age_vs_churn.png
+│   │   ├── balance_vs_churn.png
+│   │   ├── correlation_heatmap.png
+│   │   ├── country_vs_churn.png
+│   │   ├── credit_card_vs_churn.png
+│   │   ├── credit_score_vs_churn.png
+│   │   ├── products_vs_churn.png
+│   │   ├── salary_vs_churn.png
+│   │   └── tenure_vs_churn.png
+│   │
+│   └── SQL/
+│       ├── 01_database_schema.png
+│       ├── 02_customer_table.png
+│       ├── 03_country_churn_analysis.png
+│       ├── 04_products_churn_analysis.png
+│       ├── 05_data_validation.png
+│       └── 06_sql_query_example.png
+│
+├── python/
 │   └── churn_analysis.py
+│
+├── sql/
+│   ├── 01_schema.sql
+│   ├── 02_data_validation.sql
+│   └── 03_business_queries.sql
+│
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
+
+## Project Workflow
+
+The project follows an end-to-end banking analytics workflow:
+
+```text
+Bank Customer Churn Dataset
+            │
+            ▼
+Data Quality Assessment
+            │
+            ▼
+PostgreSQL Database Design
+            │
+            ▼
+SQL Business Analysis
+            │
+            ▼
+Python Exploratory Data Analysis
+            │
+            ▼
+Business Insights
+            │
+            ▼
+Business Recommendations
 ```
 
 ## Data Cleaning & Data Quality Assessment
@@ -137,6 +210,51 @@ Customer churn was analysed against:
 
 Each analysis includes statistical interpretation, business insights, and practical recommendations.
 
+## PostgreSQL Business Analysis
+
+In addition to the Python-based exploratory analysis, this project includes a complete PostgreSQL implementation to demonstrate practical SQL skills used in banking and financial analytics.
+
+The SQL workflow consists of:
+
+- Database schema design
+- Customer table creation
+- Data import into PostgreSQL
+- Data quality validation
+- Business-oriented SQL analysis
+- Customer segmentation
+- Churn analysis
+- Retention-focused business insights
+
+The SQL scripts included in this repository demonstrate how relational databases can be used to answer real business questions commonly encountered by data analysts working in banking, fintech, and financial services.
+
+### Database Schema
+
+The customer dataset was imported into PostgreSQL after designing a relational table schema with appropriate data types and constraints.
+
+The `customer_id` column was defined as the primary key to ensure every customer record is unique and to prevent duplicate entries during data import.
+
+![Database Schema](images/SQL/01_database_schema.png)
+
+---
+
+### SQL Analysis – Customer Churn by Country
+
+The following SQL query calculates the churn rate for each country using aggregation, conditional filtering, and percentage calculations.
+
+![Country Churn SQL](images/SQL/03_country_churn_analysis.png)
+
+---
+
+### Data Validation
+
+Before performing the business analysis, the imported dataset was validated to confirm:
+
+- 10,000 customer records were imported successfully.
+- No duplicate customer IDs were found.
+- Data integrity was maintained after import.
+
+![Data Validation](images/SQL/05_data_validation.png)
+
 ## Featured Visualizations
 
 The following visualisations highlight some of the most important findings from the exploratory data analysis. Each chart provides insight into the factors associated with customer churn and supports the business recommendations presented in this project.
@@ -183,6 +301,34 @@ The analysis produced several important business findings:
 * Estimated salary, credit card ownership, and tenure showed relatively weak relationships with customer churn.
 * Correlation analysis confirmed that age and customer activity were among the strongest variables associated with customer churn.
 
+## SQL Business Questions
+
+The SQL analysis answers several business-focused questions, including:
+
+- How many customers churned and how many remained?
+- What is the overall customer churn rate?
+- Which country has the highest churn rate?
+- Are inactive customers more likely to churn?
+- How does the number of banking products relate to customer retention?
+- How do churned customers differ from retained customers?
+- Which high-value customers may require proactive retention strategies?
+
+Each SQL query includes business interpretation rather than only technical output, reflecting the type of analysis expected in banking and financial analytics roles.
+
+## Skills Demonstrated
+
+This project demonstrates practical skills in:
+
+- PostgreSQL database design
+- SQL data validation
+- Business-oriented SQL analysis
+- Customer churn analysis
+- Exploratory Data Analysis (EDA)
+- Banking analytics
+- Data visualization
+- Business interpretation
+- Git and GitHub version control
+
 ## Business Recommendations
 
 Based on the analytical findings, the following recommendations are proposed:
@@ -207,12 +353,12 @@ The findings of this analysis can help financial institutions:
 
 Future versions of this project will include:
 
-* SQL-based business analysis
-* Interactive Power BI dashboard
-* Customer churn prediction using Machine Learning models
-* Feature engineering
-* Model evaluation and comparison
-* Interactive dashboard deployment
+- Interactive Power BI dashboard
+- Customer churn prediction using Machine Learning
+- Python and PostgreSQL integration
+- Feature engineering
+- Model evaluation and comparison
+- Interactive Streamlit dashboard
 
 ## Author
 
