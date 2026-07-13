@@ -241,7 +241,7 @@ The `customer_id` column was defined as the primary key to ensure every customer
 
 The following SQL query calculates the churn rate for each country using aggregation, conditional filtering, and percentage calculations.
 
-![Country Churn SQL](images/SQL/03_country_churn_analysis.png)
+![Country Churn SQL](images/SQL/03_churn_by_country_sql.png)
 
 ---
 
